@@ -11,6 +11,7 @@ var lastTime = "-----";
 // If animating, this is the interval's id
 var animInterval;
 var timeInterval;
+var singleBeep = 0;
 
 /* Get array of lines from digit d to d+1.
  n is the amount (0..1)
@@ -168,8 +169,12 @@ function drawEverythingElse() {
 function showTime() {
   if (animInterval) return; // in animation - quit
   var d = new Date();
-  if(d.getMinutes()==0){
+  if(("0"+d.getMinutes()).substr(-2)==17 && singleBeep==0){
     Bangle.beep();
+    singleBeep = 1;
+  }
+  if(("0"+d.getMinutes()).substr(-2)==1){
+    singleBeep = 0;
   }
   var hours = d.getHours();
   if (is12Hour) hours = ((hours + 11) % 12) + 1;
