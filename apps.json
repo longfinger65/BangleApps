@@ -1958,5 +1958,17 @@
       {"name":"miclock2.app.js","url":"clock-mixed.js"},
       {"name":"miclock2.img","url":"clock-mixed-icon.js","evaluate":true}
     ]
+  },
+  { "id": "miurli",
+    "name": "Mi Urli App",
+    "shortName":"Mi Urli",
+    "icon": "app.png",
+    "version":"0.01",
+    "description": "This is a clock ",
+    "tags": "",
+    "storage": [
+      {"name":"miurli.app.js","url":"app.js"},
+      {"name":"miurli.img","url":"app-icon.js","evaluate":true}
+    ]
   }
 ]
