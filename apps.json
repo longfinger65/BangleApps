@@ -1964,7 +1964,7 @@
     "shortName":"Mi Urli",
     "icon": "app.png",
     "type":"clock",
-    "version":"0.01",
+    "version":"0.02",
     "description": "This is a clock ",
     "tags": "",
     "storage": [
