@@ -168,6 +168,9 @@ function drawEverythingElse() {
 function showTime() {
   if (animInterval) return; // in animation - quit
   var d = new Date();
+  if(d.getMinutes()==0){
+    Bangle.beep();
+  }
   var hours = d.getHours();
   if (is12Hour) hours = ((hours + 11) % 12) + 1;
   var t = (" "+hours).substr(-2)+":"+
