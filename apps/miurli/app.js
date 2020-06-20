@@ -1,3 +1,5 @@
+const SETTINGS_FILE = 'miurli.settings.json';
+
 var is12Hour = (require("Storage").readJSON("setting.json",1)||{})["12hour"];
 var locale = require("locale");
 var CHARW = 34; // how tall are digits?
@@ -12,6 +14,16 @@ var lastTime = "-----";
 var animInterval;
 var timeInterval;
 var singleBeep = 0;
+
+//return setting
+function setting(key) {
+ //define default settings
+ const DEFAULTS = {
+  'hourBeep' : 'yes',
+ };
+ if (!settings) { loadSettings(); }
+  return (key in settings) ? settings[key] : DEFAULTS[key];
+ }
 
 /* Get array of lines from digit d to d+1.
  n is the amount (0..1)
