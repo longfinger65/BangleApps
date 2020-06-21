@@ -2,7 +2,6 @@
 (function(back) {
   
   const SETTINGS_FILE = 'miurli.settings.json';
-
   // initialize with default settings...
   let s = {
     'hourBeep' : 'yes',
@@ -21,14 +20,13 @@
       storage.write(SETTINGS_FILE, s);
     };
   }
-  const appMenu = {
+  E.showMenu({
     '': {'title': 'Mi Urli Settings'},
     '< Back': back,
     'Hour-Beep': {
       value: s.hourBeep,
-      format: v => v?"Yes":"No",
-      onchange: save('hourBeep'),}
+      format: v => v?"yes":"no",
+      onchange: v => require('Storage').write('SETTINGS_FILE', {hourBeep: !v}),
     }   
-  };
-  E.showMenu(appMenu)
+  })
 })
