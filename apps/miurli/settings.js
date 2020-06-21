@@ -2,7 +2,6 @@
 (function(back) {
   
   const SETTINGS_FILE = 'miurli.settings.json';
-  //const LINES = ['Steps', 'Distance'];
 
   // initialize with default settings...
   let s = {
