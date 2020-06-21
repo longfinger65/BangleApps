@@ -1,5 +1,5 @@
+const storage = require("Storage");
 const SETTINGS_FILE = 'miurli.settings.json';
-
 var is12Hour = (require("Storage").readJSON("setting.json",1)||{})["12hour"];
 var locale = require("locale");
 var CHARW = 34; // how tall are digits?
@@ -17,13 +17,13 @@ var singleBeep = 0;
 
 //return setting
 function setting(key) {
- //define default settings
- const DEFAULTS = {
-  'hourBeep' : 'yes',
- };
- if (!settings) { loadSettings(); }
+  //define default settings
+  const DEFAULTS = {
+    'hourBeep' : 'yes',
+  };
+  if (!settings) { loadSettings(); }
   return (key in settings) ? settings[key] : DEFAULTS[key];
- }
+}
 
 /* Get array of lines from digit d to d+1.
  n is the amount (0..1)
@@ -181,8 +181,8 @@ function drawEverythingElse() {
 function showTime() {
   if (animInterval) return; // in animation - quit
   var d = new Date();
-  if(("0"+d.getMinutes()).substr(-2)==17 && singleBeep==0){
-    Bangle.beep();
+  if(("0"+d.getMinutes()).substr(-2)==0 && singleBeep==0 && setting('hourBeep')=="yes"){
+    Bangle.buzz();
     singleBeep = 1;
   }
   if(("0"+d.getMinutes()).substr(-2)==1){
@@ -229,6 +229,12 @@ Bangle.on('lcdPower',function(on) {
     lastTime = "-----";
   }
 });
+
+//load settings
+let settings;
+function loadSettings() {
+    settings = storage.readJSON(SETTINGS_FILE, 1) || {};
+}
 
 g.clear();
 Bangle.loadWidgets();
