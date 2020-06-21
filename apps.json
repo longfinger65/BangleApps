@@ -1965,7 +1965,7 @@
     "icon": "app-icon.png",
     "tags": "clock",
     "type":"clock",
-    "version":"0.08",
+    "version":"0.09",
     "description": "This is a clock ",
     "allow_emulator":true,
     "storage": [
