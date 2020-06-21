@@ -11,7 +11,7 @@
   const saved = storage.readJSON(SETTINGS_FILE, 1) || {};
   for (const key in saved) {
     s[key] = saved[key];
-  }
+  };
   E.showMenu({
     '': {'title': 'Mi Urli Settings'},
     '< Back': back,
