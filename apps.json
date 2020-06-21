@@ -1970,6 +1970,7 @@
     "allow_emulator":true,
     "storage": [
       {"name":"miurli.app.js","url":"app.js"},
+      {"name":"settings.js","url":"settings.js"},
       {"name":"miurli.img","url":"app-icon.js","evaluate":true}
     ]
   }
