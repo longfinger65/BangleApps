@@ -126,7 +126,7 @@ const DIGITS = {
 /* Draw a transition between lastText and thisText.
  'n' is the amount - 0..1 */
 function drawDigits(lastText,thisText,n) {
-  "ram"
+  "ram";
   const p = CHARP; // padding around digits
   const s = CHARW; // character size
   var x = 0;  // x offset
