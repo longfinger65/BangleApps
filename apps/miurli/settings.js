@@ -18,7 +18,7 @@
     'Hour-Beep': {
       value: s.hourBeep,
       format: v => v?"yes":"no",
-      onchange: v => require('Storage').write(SETTINGS_FILE, {hourBeep: !v}),
+      onchange: v => require('Storage').write(SETTINGS_FILE, {'hourBeep': !v}),
     },
   })
 })
