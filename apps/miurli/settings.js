@@ -19,7 +19,6 @@
     return function (value) {
       s[key] = value;
       storage.write(SETTINGS_FILE, s);
-      //WIDGETS["activepedom"].draw();
     };
   }
   const appMenu = {
