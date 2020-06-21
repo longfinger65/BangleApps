@@ -1,6 +1,5 @@
 // make sure to enclose the function in parentheses
 (function(back) {
-  
   const SETTINGS_FILE = 'miurli.settings.json';
   // initialize with default settings...
   let s = {
@@ -20,6 +19,6 @@
       value: s.hourBeep,
       format: v => v?"yes":"no",
       onchange: v => require('Storage').write(SETTINGS_FILE, {hourBeep: !v}),
-    }   
+    },
   })
 })
