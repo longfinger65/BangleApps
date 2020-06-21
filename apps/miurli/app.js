@@ -1,6 +1,6 @@
 const storage = require("Storage");
-const SETTINGS_FILE = 'miurli.json';
-var is12Hour = (require("Storage").readJSON("miurli.json",1)||{})["12hour"];
+const SETTINGS_FILE = 'miurli.settings.json';
+var is12Hour = (require("Storage").readJSON("settings.json",1)||{})["12hour"];
 var locale = require("locale");
 var CHARW = 34; // how tall are digits?
 var CHARP = 2; // how chunky are digits?
