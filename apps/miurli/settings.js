@@ -1,6 +1,6 @@
 // make sure to enclose the function in parentheses
 (function(back) {
-  const SETTINGS_FILE = 'miurli.json';
+  const SETTINGS_FILE = 'miurli.settings.json';
   // initialize with default settings...
   let s = {
     'hourBeep' : 'yes',
