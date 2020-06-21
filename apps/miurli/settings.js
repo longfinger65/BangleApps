@@ -13,20 +13,13 @@
   for (const key in saved) {
     s[key] = saved[key];
   }
-  // creates a function to safe a specific setting, e.g.  save('color')(1)
-  function save(key) {
-    return function (value) {
-      s[key] = value;
-      storage.write(SETTINGS_FILE, s);
-    };
-  }
   E.showMenu({
     '': {'title': 'Mi Urli Settings'},
     '< Back': back,
     'Hour-Beep': {
       value: s.hourBeep,
       format: v => v?"yes":"no",
-      onchange: v => require('Storage').write('SETTINGS_FILE', {hourBeep: !v}),
+      onchange: v => require('Storage').write(SETTINGS_FILE, {hourBeep: !v}),
     }   
   })
 })
